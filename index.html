@@ -1,15 +1,115 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
- <title>Documento Base para Bootstrap</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Prova de recurso Lab Info</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .row > div {
+            border: 1px solid #ddd;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Prova de recurso Lab Info</h1>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Mes</th>
+                            <th>Vendas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Janeiro</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Fevereiro</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Março</td>
+                            <td>78</td>
+                        </tr><tr>
+                            <td>4</td>
+                            <td>Abril</td>
+                            <td>22</td>
+                        </tr><tr>
+                            <td>5</td>
+                            <td>Maio</td>
+                            <td>56</td>
+                        </tr><tr>
+                            <td>6</td>
+                            <td>Junho</td>
+                            <td>89</td>
+                        </tr><tr>
+                            <td>7</td>
+                            <td>Julho</td>
+                            <td>90</td>
+                        </tr><tr>
+                            <td>8</td>
+                            <td>Agosto</td>
+                            <td>32</td>
+                        </tr><tr>
+                            <td>9</td>
+                            <td>Setembro</td>
+                            <td>65</td>
+                        </tr><tr>
+                            <td>10</td>
+                            <td>Outubro</td>
+                            <td>43</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Novembroro</td>
+                            <td>20</td>
+                        </tr><tr>
+                            <td>72</td>
+                            <td>Desembro</td>
+                            <td>99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                    datasets: [{
+                        label: 'Vendas',
+                        data: [24, 45, 78, 22, 56, 89, 90, 32, 65, 43, 20, 99],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
 </body>
 </html>
